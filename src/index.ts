@@ -25,6 +25,7 @@ export interface NoteInterface extends Document{
     createdBy: mongoose.Types.ObjectId;
     title: string;
     body: string;
+    owner: UserInterface;
 }
 
 // TokenInterface

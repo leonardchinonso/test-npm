@@ -1,6 +1,6 @@
 {
   "name": "test-npm-390",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A package for the re-usage of schemas and interfaces across all 390labs platforms",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
