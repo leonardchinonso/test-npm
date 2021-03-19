@@ -1,3 +1,4 @@
+import "./db";
 import * as crypt from "bcryptjs";
 import mongoose, { Schema, Document, } from "mongoose";
 import * as _ from "lodash";
@@ -87,7 +88,7 @@ UserSchema.pre<UserInterface>("save", async function (next,) {
     next();
 },);
 
-export const UserConnect = mongoose.connection.useDb("all-in-one-auth",).model<UserInterface>("User", UserSchema,);
+export const User = mongoose.connection.useDb("all-in-one-auth",).model<UserInterface>("User", UserSchema,);
 
 // TokenSchema
 const TokenSchema: Schema = new Schema({
@@ -121,7 +122,7 @@ TokenSchema.methods = {
     },
 };
 
-export const TokenConnect = mongoose.connection.useDb("all-in-one-auth",).model<TokenInterface>("Token", TokenSchema,);
+export const Token = mongoose.connection.useDb("all-in-one-auth",).model<TokenInterface>("Token", TokenSchema,);
 
 // NoteSchema
 const NoteSchema: Schema = new Schema({
@@ -148,8 +149,4 @@ NoteSchema.methods = {
     },
 };
 
-// export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
-
-export const NoteConnect = NoteSchema;
-
-export const mongooseConnection = mongoose;
+export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
