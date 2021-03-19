@@ -26,6 +26,7 @@ module.exports = {
         quotes: [WARN, "double",],
         semi: [WARN, "always",],
         "import/newline-after-import": OFF,
+        "import/prefer-default-export": OFF,
         "max-len": [WARN, 150,],
         "comma-dangle": OFF,
         "no-cond-assign": [WARN, "always",],

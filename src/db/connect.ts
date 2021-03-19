@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-export async function connect(uri: string,): Promise<void> {
+export default async function connect(uri: string,): Promise<void> {
 
     mongoose.Promise = global.Promise;
     mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, },);

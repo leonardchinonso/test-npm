@@ -1,8 +1,8 @@
 import * as crypt from "bcryptjs";
 import mongoose, { Schema, Document, } from "mongoose";
-import { connect as connection } from "./db/connect";
-import * as _ from "lodash";
 import beautifyUnique from "mongoose-beautiful-unique-validation";
+import * as _ from "lodash";
+import connection from "./db/connect";
 
 export const connect = connection;
 
