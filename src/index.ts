@@ -3,12 +3,12 @@ import mongoose, { Schema, Document, } from "mongoose";
 import * as _ from "lodash";
 import beautifyUnique from "mongoose-beautiful-unique-validation";
 
-export function connect(uri: string,) {
+export async function connect(uri: string,): Promise<void> {
 
     mongoose.Promise = global.Promise;
     // const uri = "mongodb://127.0.0.1:27017/octopus?authSource=admin";
     mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, },);
-    const db = mongoose.connection.once("open", () => {
+    mongoose.connection.once("open", () => {
         console.log("Test-npm-390 MongoDb connection created successfully!",);
     },).on("error", () => {
         console.log("Test-npm-390 MongoDB connection error:",);
@@ -161,5 +161,3 @@ NoteSchema.methods = {
 };
 
 export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
-
-
