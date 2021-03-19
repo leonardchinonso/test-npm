@@ -151,3 +151,5 @@ NoteSchema.methods = {
 // export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
 
 export const NoteConnect = NoteSchema;
+
+export const mongooseConnection = mongoose;
