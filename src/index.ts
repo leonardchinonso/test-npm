@@ -87,7 +87,7 @@ UserSchema.pre<UserInterface>("save", async function (next,) {
     next();
 },);
 
-export const User = mongoose.connection.useDb("all-in-one-auth",).model<UserInterface>("User", UserSchema,);
+export const UserConnect = mongoose.connection.useDb("all-in-one-auth",).model<UserInterface>("User", UserSchema,);
 
 // TokenSchema
 const TokenSchema: Schema = new Schema({
@@ -121,7 +121,7 @@ TokenSchema.methods = {
     },
 };
 
-export const Token = mongoose.connection.useDb("all-in-one-auth",).model<TokenInterface>("Token", TokenSchema,);
+export const TokenConnect = mongoose.connection.useDb("all-in-one-auth",).model<TokenInterface>("Token", TokenSchema,);
 
 // NoteSchema
 const NoteSchema: Schema = new Schema({
@@ -148,4 +148,6 @@ NoteSchema.methods = {
     },
 };
 
-export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
+// export const Note = mongoose.connection.useDb("all-in-one-notes",).model<NoteInterface>("Note", NoteSchema,);
+
+export const NoteConnect = NoteSchema;
